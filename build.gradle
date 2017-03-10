@@ -1,0 +1,54 @@
+buildscript {
+    ext {
+        cucumberVersion = '1.2.4'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.1.RELEASE")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+
+jar {
+    baseName = 'lazy-loading'
+    version = '0.1.0'
+}
+
+repositories {
+    mavenCentral()
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+configurations {
+    compile.exclude module: "spring-boot-starter-tomcat"
+}
+
+dependencies {
+    compile("javax.inject:javax.inject:1")
+    compile("org.springframework.boot:spring-boot-starter-web")
+    compile("org.springframework.boot:spring-boot-devtools")
+    compile("org.springframework.boot:spring-boot-starter-data-jpa")
+    compile("org.springframework.boot:spring-boot-starter-undertow")
+    compile("org.springframework.boot:spring-boot-starter-thymeleaf")
+    compile("org.springframework.boot:spring-boot-devtools")
+    compile("org.apache.commons:commons-lang3:3.5")
+    compile("org.postgresql:postgresql:9.4-1206-jdbc42")
+    compileOnly "org.projectlombok:lombok:1.16.14"
+
+    testCompile("info.cukes:cucumber-java:${cucumberVersion}")
+    testCompile("info.cukes:cucumber-junit:${cucumberVersion}")
+    testCompile("info.cukes:cucumber-spring:${cucumberVersion}")
+    testCompile("io.rest-assured:rest-assured:3.0.2")
+    testCompile("io.rest-assured:json-path:3.0.2")
+
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+}
+

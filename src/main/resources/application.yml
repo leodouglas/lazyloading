@@ -1,0 +1,30 @@
+server:
+  port: 8080
+  undertow:
+    accesslog:
+      enabled: true
+      dir: target/logs
+      pattern: combined
+  compression:
+    enabled: true
+    min-response-size: 1
+logging:
+  level:
+    org.springframework.security: DEBUG
+spring:
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/techandsolve
+    username: leo
+    password: ''
+  jpa:
+    show-sql: true
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+  main:
+    banner-mode: 'OFF'
+  http:
+    multipart:
+      max-file-size: 1MB
+      max-request-size: 10MB
