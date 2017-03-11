@@ -30,6 +30,6 @@ Tools needed to run this app:
 
 ## Running the App
 * `./gradlew bootRun`
-  * starts the api server on port 8080.
+  * starts the server on http://localhost:8080
 
 Cucumber was used for the tests
