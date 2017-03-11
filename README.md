@@ -17,3 +17,16 @@ Explanation of Sample
 In the first case, Wilson can make two trips by stacking a 30-pound item on top of a 1-pound item, making the bag appear to contain 60 pounds.
 In the second case, Wilson needs to put all the items in the bag at once and can only make one trip.
 In the third case, one possible solution is to put the items with odd weight in the bag for the first trip, and then the items with even weight in the bag for the second trip, making sure to put the heaviest item on top.
+
+# APP - Getting Started
+## Dependencies
+Tools needed to run this app:
+* postgresql
+* java 8
+* maven
+
+## Installing
+* `./gradlew build
+
+## Running the App
+* `./gradlew bootRun` to run on http://localhost:8080
