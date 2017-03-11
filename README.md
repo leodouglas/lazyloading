@@ -26,7 +26,7 @@ Tools needed to run this app:
 * maven
 
 ## Installing
-* `./gradlew build
+* `./gradlew build`
 
 ## Running the App
 * `./gradlew bootRun` to run on http://localhost:8080
